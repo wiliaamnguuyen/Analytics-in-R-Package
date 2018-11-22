@@ -1,4 +1,4 @@
-#Demographics and Employment in US Data Exploratory Analysis
+# Demographics and Employment in US Data Exploratory Analysis
 
 In the wake of the Great Recession of 2009, there has been a good deal of focus on employment statistics, one of the most important metrics policymakers use to gauge the overall strength of the economy. 
 
