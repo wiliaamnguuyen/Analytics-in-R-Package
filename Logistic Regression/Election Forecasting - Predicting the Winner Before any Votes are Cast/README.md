@@ -26,7 +26,7 @@ The independent variables are related to the polling data in that state:
 -	_DiffCount_: Counts the number of all the polls leading up to the election that predicted a Republican winner in the state, minus the number of polls that predicted a Democratic winner. 
 -	_PropR (or Proportion Republican):_ has the proportion of all those polls leading up to the election that predicted a Republican winner. 
 
-#Dealing with Missing Data
+# Dealing with Missing Data
 For the **_Rasmussen and SurveyUSA_** variable, there are a decent amount of missing values. 
 To fill in this missing values, the approach is called **_multiple imputation_**. 
 -	Fill in the missing values based on the non-missing values for an observation 
@@ -40,7 +40,7 @@ To fill in this missing values, the approach is called **_multiple imputation_**
     -	All of the variables have been filled in, no more missing values.
     -	Remember to copy the variables with completed values back into the original data frame which has all the variables for the problem 
 
-#A Sophisticated Baseline Method
+# A Sophisticated Baseline Method
 
 To build a model, I need to first split the data into the training and test set. 
 I have decided to test the data on the 2012 presidential election based on the a model trained on 2004 and 2008 dataset. 
@@ -74,7 +74,7 @@ To understand the prediction of my baseline model against which I want to compar
     -	Rows are true outcome, 1 (Republican) and 0 (Democrat) and the columns are the smart baseline predictions -1, 0 or 1. 
     -	This is a more reasonable baseline method to move forward to compare against comparing logistic regression-based approach. 
     
-#Logistic Regression Models 
+# Logistic Regression Models 
 
 I considered the possibility that there is a multicollinearity issue within the independent variable with building regression model; I am suspecting there is multicollinearity amongst the variables since they are all measuring how strong the Republican candidate is performing in a specific state. 
 -	Normally, I would compute the correlation function on the training set, but it won’t work since ‘x’ must be numeric 
@@ -113,7 +113,7 @@ I will build a logistic regression model with just one variable, but which varia
         -	I will use this two-variable model to make predictions on the testing set. 
 
 
-#Test Set Predictions
+# Test Set Predictions
 Looking at the smart baseline model that basically just took a look at the polling results from the Rasmussen poll and used those to determine who was predicted to win the election. 
 -	Very easy to compute the outcome for this simple baseline on the testing set. 
 -	Will table the testing set outcome variable, **Republican** and compare that against the actual outcome of the smart baseline, which is the sign of the testing set’s Rasmussen variables. 
