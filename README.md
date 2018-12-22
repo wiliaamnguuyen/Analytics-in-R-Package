@@ -1,4 +1,4 @@
-# Analytics in R Package
+# R Analytics
 
 In the last decade, the amount of data available to organizations has reached unprecedented levels. Data is transforming business, social interactions, and the future of our society. This repo will examine real world examples of how analytics have been used to improve a business or industry. 
 
