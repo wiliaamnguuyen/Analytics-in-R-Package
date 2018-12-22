@@ -17,7 +17,7 @@ This repository will show following analytical methods:
 Using the statistical software R to build models and work with data. 
 
 Objectives/Goals: 
-1. Show an applied understanding of many different analytic methods, including linear & logistic regression, custering, and data visualization
-2. Implementing above methods in computing statistical software environment in R
-3. Use mathematical optimization to solve optimization models in spreadsheet software
+1. Showed an applied understanding of many different analytic methods, including linear & logistic regression, custering, and data visualization
+2. Implemented above methods in computing statistical software environment in R
+3. Used mathematical optimization to solve optimization models in spreadsheet software
 
