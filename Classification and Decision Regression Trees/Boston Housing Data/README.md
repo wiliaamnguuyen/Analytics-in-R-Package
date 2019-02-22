@@ -34,7 +34,10 @@ There will usually be multiple census tracts per **town**.
 -	**PTRATIO** is the pupil-teacher ratio by town. 
 
 ## Geographical Locations
-> points(boston$LON[boston$MEDV>=21.2],boston$LAT[boston$MEDV>=21.2],col='red',pch=19)
+```r
+points(boston$LON[boston$MEDV>=21.2],boston$LAT[boston$MEDV>=21.2],col='red',pch=19)
+```
+
 From this plot, I can see housing prices are not distributed in a linear way over the area; thus linear regression won’t do well at predicting house price. 
 
 ## Regression Trees
