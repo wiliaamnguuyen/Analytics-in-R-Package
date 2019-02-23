@@ -51,24 +51,20 @@ Calculation of AUC of CART model:
 ## A Random Forest Model 
 Before building my random forest model, I down-sampled my training set. My research shows that while some modern personal computers can build a random forest model on the entire training set, others might run out of memory when trying to train the model since **_random forests is much more computationally intensive than CART or Logistic Regression_**. Thus, before continuing I will define a new training set to be used when building my random forest model containing 2000 randomly selected observations from the original training set. 
 
->set.seed(1)
-
-
->trainSmall = train[sample(nrow(train),2000),]
+```r
+set.seed(1)
+trainSmall = train[sample(nrow(train),2000),]
+```
 
 
 Random forest models work by building a large collection of trees; as a result, I lose some of the interpretability that comes with CART in terms of seeing how predictions are made and which variables are important. **However, I can still compute metrics that give me insight which variables are important.**
 One metric that I can look at is the number of times, aggregated over all the random forest model, that a certain variable is selected for a split. To view this metric, run the following lines of R. 
 
-
-> vu = varUsed(model,count=True)
-
-
-> vusorted = sort(vu,decreasing=FALSE,index.return=TRUE)
-
-
-> dotchart(vusorted$x,names(MODEL$forest$xlevels[vusorted$ix]))
-
+```r
+vu = varUsed(model,count=True)
+vusorted = sort(vu,decreasing=FALSE,index.return=TRUE)
+dotchart(vusorted$x,names(MODEL$forest$xlevels[vusorted$ix]))
+```
 
 This produces a chart for each variable and measures the number of times that variable was selected for splitting (value on the x-axis). 
 
@@ -80,8 +76,10 @@ I want to study how CART behaves with different choices of its complexity parame
 -	I did this using the train() function. 
 -	Testing cp values from 0.002 to 0.1 in 0.002 increments
 
+```r
+cartGrid = expand.grid(.cp=seq(0.002,0.1,0.002))
+```
 
->cartGrid = expand.grid(.cp=seq(0.002,0.1,0.002))
 
 Compared to the original accuracy using the default value of cp, this new CART model using the optimal cp value (0.002) is an improvement. However, do I favour this new model over the old just because it has a higher accuracy? 
 -	Upon plotting the tree, it has 18 splits. 
